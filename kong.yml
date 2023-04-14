@@ -2,7 +2,7 @@ _format_version: "2.1"
  
 services:
   - name: app-security
-    url: http://host.docker.internal:5001/api/auth
+    url: http://host.docker.internal:9999/app-security/api/auth
     plugins:
       - name: jwt
         config:
@@ -12,19 +12,19 @@ services:
         paths:
           - /api/auth
   - name: app-invoice
-    url: http://host.docker.internal:5002/api/invoce
+    url: http://host.docker.internal:9999/app-invoce/api/invoce
     routes:
       - name: invoce-route
         paths:
           - /api/invoce
   - name: app-pay
-    url: http://host.docker.internal:5003/api/pay
+    url: http://host.docker.internal:9999/app-pay/api/pay
     routes:
       - name: pay-route
         paths:
           - /api/pay
   - name: app-transaction
-    url: http://host.docker.internal:5004/api/transaction
+    url: http://host.docker.internal:9999/app-transaction/api/transaction
     routes:
       - name: transaction-route
         paths:

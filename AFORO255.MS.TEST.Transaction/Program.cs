@@ -9,6 +9,7 @@ using Aforo255.Cross.Event.Src.Bus;
 using Aforo255.Cross.Event.Src;
 using MediatR;
 using Aforo255.Cross.Discovery.Consul;
+using Aforo255.Cross.Discovery.Fabio;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -26,6 +27,7 @@ builder.Services.AddRabbitMQ();
 builder.Services.AddTransient<PayEventHandler>();
 builder.Services.AddTransient<IEventHandler<PayCreatedEvent>, PayEventHandler>();
 builder.Services.AddConsul();
+builder.Services.AddFabio();
 
 var app = builder.Build();
 app.MapCarter();

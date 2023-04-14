@@ -21,6 +21,19 @@ services:
     - 8500:8500
     networks:
     - aforo255-test
+  balancer-service-test:
+    image: fabiolb/fabio:1.5.15-go1.15.5
+    container_name: component-balancer
+    restart: always
+    environment:
+    - FABIO_REGISTRY_CONSUL_ADDR=component-discovery:8500
+    ports:
+    - 9998:9998
+    - 9999:9999
+    networks:
+    - aforo255-test
+    depends_on:
+    - consul-service-test
  
 networks:
   aforo255-test:

@@ -8,6 +8,7 @@ using AFORO255.MS.TEST.Invoice.Messages.EventHandlers;
 using Aforo255.Cross.Event.Src.Bus;
 using AFORO255.MS.TEST.Invoice.Messages.Events;
 using Aforo255.Cross.Discovery.Consul;
+using Aforo255.Cross.Discovery.Fabio;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,7 @@ builder.Services.AddRabbitMQ();
 builder.Services.AddTransient<PayEventHandler>();
 builder.Services.AddTransient<IEventHandler<PayCreatedEvent>, PayEventHandler>();
 builder.Services.AddConsul();
+builder.Services.AddFabio();
 
 var app = builder.Build();
 app.UseAuthorization();

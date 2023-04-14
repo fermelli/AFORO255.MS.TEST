@@ -1,4 +1,6 @@
 using Aforo255.Cross.Discovery.Consul;
+using Aforo255.Cross.Discovery.Fabio;
+using Aforo255.Cross.Discovery.Mvc;
 using Aforo255.Cross.Event.Src;
 using AFORO255.MS.TEST.Pay.Data;
 using AFORO255.MS.TEST.Pay.Messages.Commands;
@@ -24,6 +26,7 @@ builder.Services.AddMediatR(typeof(Program).GetTypeInfo().Assembly);
 builder.Services.AddRabbitMQ();
 builder.Services.AddTransient<IRequestHandler<PayCreateCommand, bool>, PayCommandHandler>();
 builder.Services.AddConsul();
+builder.Services.AddFabio();
 
 var app = builder.Build();
 
