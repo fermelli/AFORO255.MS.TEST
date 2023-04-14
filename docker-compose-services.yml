@@ -1,0 +1,19 @@
+version: "3.5"
+ 
+services:
+  bus-service-test:
+    image: rabbitmq:3.8.13-management
+    container_name: bus-event
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=Mellizo55
+      - RABBITMQ_DEFAULT_PASS=Mellizo55
+    ports:
+    - 5672:5672
+    - 15672:15672
+    networks:
+    - aforo255-test  
+ 
+networks:
+  aforo255-test:
+    name: micro

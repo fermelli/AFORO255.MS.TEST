@@ -12,5 +12,16 @@ public class InvoceService : IInvoceService
     {
         return _contextDatabase.Invoce.ToList();
     }
+
+    public void ChangeState(int idInvoce)
+    {
+        var invoce = _contextDatabase.Invoce.FirstOrDefault(i => i.IdInvoce == idInvoce);
+
+        if (invoce != null)
+        {
+            invoce.State += 1;
+            _contextDatabase.SaveChanges();
+        }
+    }
 }
 
