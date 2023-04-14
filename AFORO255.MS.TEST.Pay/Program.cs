@@ -1,3 +1,4 @@
+using Aforo255.Cross.Discovery.Consul;
 using Aforo255.Cross.Event.Src;
 using AFORO255.MS.TEST.Pay.Data;
 using AFORO255.MS.TEST.Pay.Messages.Commands;
@@ -22,10 +23,14 @@ builder.Services.AddScoped<IPayService, PayService>();
 builder.Services.AddMediatR(typeof(Program).GetTypeInfo().Assembly);
 builder.Services.AddRabbitMQ();
 builder.Services.AddTransient<IRequestHandler<PayCreateCommand, bool>, PayCommandHandler>();
+builder.Services.AddConsul();
 
 var app = builder.Build();
+
+
 app.UseAuthorization();
 app.MapControllers();
+app.UseConsul();
 
 DbCreated.CreateDbIfNotExists(app);
 

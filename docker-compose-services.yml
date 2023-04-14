@@ -12,7 +12,15 @@ services:
     - 5672:5672
     - 15672:15672
     networks:
-    - aforo255-test  
+    - aforo255-test
+  consul-service-test:
+    image: consul:1.9.10
+    container_name: component-discovery
+    restart: always
+    ports:
+    - 8500:8500
+    networks:
+    - aforo255-test
  
 networks:
   aforo255-test:
