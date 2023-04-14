@@ -13,14 +13,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		docker-compose-databases.yml = docker-compose-databases.yml
+		docker-compose-gateway.yml = docker-compose-gateway.yml
 		docker-compose-services.yml = docker-compose-services.yml
+		kong.yml = kong.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AFORO255.MS.TEST.Pay", "AFORO255.MS.TEST.Pay\AFORO255.MS.TEST.Pay.csproj", "{1644DFD9-7D6D-4BC5-A282-5581DD166E89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFORO255.MS.TEST.Invoice", "AFORO255.MS.TEST.Invoice\AFORO255.MS.TEST.Invoice.csproj", "{84F6AA4D-9C90-4F30-9D87-8FCB1723EF13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AFORO255.MS.TEST.Invoice", "AFORO255.MS.TEST.Invoice\AFORO255.MS.TEST.Invoice.csproj", "{84F6AA4D-9C90-4F30-9D87-8FCB1723EF13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFORO255.MS.TEST.Transaction", "AFORO255.MS.TEST.Transaction\AFORO255.MS.TEST.Transaction.csproj", "{5589CA4F-6C98-43BA-99CB-D17C4248A11C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AFORO255.MS.TEST.Transaction", "AFORO255.MS.TEST.Transaction\AFORO255.MS.TEST.Transaction.csproj", "{5589CA4F-6C98-43BA-99CB-D17C4248A11C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

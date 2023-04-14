@@ -1,0 +1,43 @@
+_format_version: "2.1"
+ 
+services:
+  - name: app-security
+    url: http://host.docker.internal:5001/api/auth
+    routes:
+      - name: security-route
+        paths:
+          - /api/auth
+  - name: app-invoice
+    url: http://host.docker.internal:5002/api/invoce
+    routes:
+      - name: invoce-route
+        paths:
+          - /api/invoce
+  - name: app-pay
+    url: http://host.docker.internal:5003/api/pay
+    routes:
+      - name: pay-route
+        paths:
+          - /api/pay
+  - name: app-transaction
+    url: http://host.docker.internal:5004/api/transaction
+    routes:
+      - name: transaction-route
+        paths:
+          - /api/transaction
+
+plugins:
+- name: cors
+  config: 
+    origins:
+    - "*"
+    methods:
+    - GET
+    - POST
+    headers:
+    - "*"
+    exposed_headers:
+    - "*"
+    credentials: true
+    max_age: 3600
+    preflight_continue: false
