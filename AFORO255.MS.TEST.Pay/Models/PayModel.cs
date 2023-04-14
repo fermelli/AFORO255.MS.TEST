@@ -14,7 +14,7 @@ public class PayModel
     }
 
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id_operation")]
     public int IdOperation { get; set; }
 
