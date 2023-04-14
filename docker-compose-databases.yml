@@ -12,6 +12,17 @@ services:
     - SA_PASSWORD=Mellizo55
     networks:
     -  aforo255-test
+  service-mysql:
+    image: mysql:8.0.26
+    container_name: database-mysql
+    restart: always
+    environment:
+    - MYSQL_ROOT_PASSWORD=Mellizo55
+    ports:
+    - 3307:3306
+    - 33061:33060
+    networks:
+    - aforo255-test
 
 networks:
    aforo255-test:

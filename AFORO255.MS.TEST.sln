@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 		docker-compose-databases.yml = docker-compose-databases.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFORO255.MS.TEST.Pay", "AFORO255.MS.TEST.Pay\AFORO255.MS.TEST.Pay.csproj", "{1644DFD9-7D6D-4BC5-A282-5581DD166E89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{2855D8C3-E6DC-4186-839B-3EBBE57E708A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2855D8C3-E6DC-4186-839B-3EBBE57E708A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2855D8C3-E6DC-4186-839B-3EBBE57E708A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1644DFD9-7D6D-4BC5-A282-5581DD166E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1644DFD9-7D6D-4BC5-A282-5581DD166E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1644DFD9-7D6D-4BC5-A282-5581DD166E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1644DFD9-7D6D-4BC5-A282-5581DD166E89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{08D41F61-AFFB-40F5-92E8-165E0181CE8C} = {5D0E236A-A566-41D3-987A-7CFF137B4932}
 		{2855D8C3-E6DC-4186-839B-3EBBE57E708A} = {08D41F61-AFFB-40F5-92E8-165E0181CE8C}
+		{1644DFD9-7D6D-4BC5-A282-5581DD166E89} = {08D41F61-AFFB-40F5-92E8-165E0181CE8C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4DD4B10-E95B-4DC0-9088-5F0C4E04456C}
