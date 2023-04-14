@@ -34,6 +34,16 @@ services:
     - aforo255-test
     depends_on:
     - consul-service-test
+  config-service-test:
+    image: nacos/nacos-server:v2.0.3
+    container_name: component-config 
+    restart: always
+    environment:
+    - MODE=standalone
+    ports:
+    - 8848:8848
+    networks:
+    - aforo255-test
  
 networks:
   aforo255-test:

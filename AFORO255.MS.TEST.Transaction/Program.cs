@@ -12,12 +12,19 @@ using Aforo255.Cross.Discovery.Consul;
 using Aforo255.Cross.Discovery.Fabio;
 
 var builder = WebApplication.CreateBuilder(args);
+
+IHostBuilder hostBuilder = builder.Host.ConfigureAppConfiguration((host, builder) =>
+{
+    IConfigurationRoot c = builder.Build();
+    builder.AddNacosConfiguration(c.GetSection("nacosConfig"));
+});
+
 builder.Services.AddControllers();
 builder.Services.AddCarter();
 builder.Services.Configure<Mongosettings>(opt =>
 {
-    opt.Connection = builder.Configuration.GetSection("mongo:cn").Value;
-    opt.DatabaseName = builder.Configuration.GetSection("mongo:database").Value;
+    opt.Connection = builder.Configuration.GetSection("cn:mongo").Value;
+    opt.DatabaseName = builder.Configuration.GetSection("database:mongo").Value;
 });
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IMongoBookDBContext, MongoBookDBContext>();

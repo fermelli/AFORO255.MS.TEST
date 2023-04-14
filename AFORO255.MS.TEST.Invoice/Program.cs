@@ -12,11 +12,17 @@ using Aforo255.Cross.Discovery.Fabio;
 
 var builder = WebApplication.CreateBuilder(args);
 
+IHostBuilder hostBuilder = builder.Host.ConfigureAppConfiguration((host, builder) =>
+{
+    IConfigurationRoot c = builder.Build();
+    builder.AddNacosConfiguration(c.GetSection("nacosConfig"));
+});
+
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ContextDatabase>(
     opt =>
     {
-        opt.UseNpgsql(builder.Configuration["postgres:cn"]);
+        opt.UseNpgsql(builder.Configuration["cn:postgres"]);
     }
 );
 builder.Services.AddScoped<IInvoceService, InvoceService>();

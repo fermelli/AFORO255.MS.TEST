@@ -8,11 +8,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+IHostBuilder hostBuilder = builder.Host.ConfigureAppConfiguration((host, builder) =>
+{
+    IConfigurationRoot c = builder.Build();
+    builder.AddNacosConfiguration(c.GetSection("nacosConfig"));
+});
+
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ContextDatabase>(
     opt =>
     {
-        opt.UseSqlServer(builder.Configuration["sql:cn"]);
+        opt.UseSqlServer(builder.Configuration["cn:sql"]);
     }
 );
 builder.Services.AddScoped<IAccessService, AccessService>();
