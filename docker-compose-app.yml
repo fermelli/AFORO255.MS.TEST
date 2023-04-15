@@ -1,0 +1,39 @@
+version: "3.5"
+ 
+services:
+  app-security:
+    image: fermelli/app-security:1.0.3
+    container_name: app-security
+    restart: always
+    ports:
+    - 9001:80
+    networks:
+    - aforo255-test
+  app-invoice:
+    image: fermelli/app-invoice:1.0.3
+    container_name: app-invoice
+    restart: always
+    ports:
+    - 9002:80
+    networks:
+    - aforo255-test
+  app-pay:
+    image: fermelli/app-pay:1.0.3
+    container_name: app-pay
+    restart: always
+    ports:
+    - 9003:80
+    networks:
+    - aforo255-test
+  app-transaction:
+    image: fermelli/app-transaction:1.0.3
+    container_name: app-transaction
+    restart: always
+    ports:
+    - 9004:80
+    networks:
+    - aforo255-test
+ 
+networks:
+  aforo255-test:
+    name: micro
