@@ -3,7 +3,7 @@ version: "3.5"
 services:
   bus-service-test:
     image: rabbitmq:3.8.13-management
-    container_name: bus-event
+    container_name: bus-service-test
     restart: always
     environment:
       - RABBITMQ_DEFAULT_USER=Mellizo55
@@ -15,7 +15,7 @@ services:
     - aforo255-test
   consul-service-test:
     image: consul:1.9.10
-    container_name: component-discovery
+    container_name: consul-service-test
     restart: always
     ports:
     - 8500:8500
@@ -23,10 +23,10 @@ services:
     - aforo255-test
   balancer-service-test:
     image: fabiolb/fabio:1.5.15-go1.15.5
-    container_name: component-balancer
+    container_name: balancer-service-test
     restart: always
     environment:
-    - FABIO_REGISTRY_CONSUL_ADDR=component-discovery:8500
+    - FABIO_REGISTRY_CONSUL_ADDR=consul-service-test:8500
     ports:
     - 9998:9998
     - 9999:9999
@@ -36,7 +36,7 @@ services:
     - consul-service-test
   config-service-test:
     image: nacos/nacos-server:v2.0.3
-    container_name: component-config 
+    container_name: config-service-test 
     restart: always
     environment:
     - MODE=standalone
