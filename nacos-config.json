@@ -1,0 +1,12 @@
+{
+  "cn": {
+    "postgres": "Server=localhost;Port=5434;Database=db_invoice;User Id=postgres;Password=Mellizo55;",
+    "mysql": "server=localhost;port=3307;database=db_operation;user=root;password=Mellizo55",
+    "sql": "Server=localhost,1434;Database=db_security;User Id=sa;Password=Mellizo55;Trust Server Certificate=true;",
+    "mongo": "mongodb://fermelli:Mellizo55@localhost:27018",
+    "env": "local"
+  },
+  "database": {
+      "mongo": "db_transaction"
+  }
+}
